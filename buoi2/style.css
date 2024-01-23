@@ -1,0 +1,242 @@
+
+body {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    display: grid;
+      place-items: center;
+      height: 100vh;
+      margin: 0;
+  }
+header{
+    margin-top: 5px;
+    display: flex;
+    box-shadow: 0px 17px 20px rgb(2 1 3 / 8%);
+    padding: 15px 30px;
+    background-color: white;
+}
+.logo_J {
+    margin: auto;
+    width: 20px;
+    text-align: center;
+    background-color: black;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    font-weight: 600;
+}
+.Name_logo {
+    margin: auto 10px;
+    color: black;
+    font-weight: 100;
+}
+.bar_header{
+    display: flex;
+}
+.social_icon{
+    margin-top: 10px;
+    margin-left: 700px;
+}
+.introduct {
+    display: flex;
+    margin-top: 90px;
+    justify-content: center;
+}
+.img_1{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.introduct_text{
+    margin: 30px 0px 20px 100px;
+}
+.info{
+    display: flex;
+    justify-content: space-around
+}
+.exp, .project, .client {
+    text-align: center;
+}
+h3{
+    margin-right: 90px;
+    margin-top: 40px;
+    font-size: 30px;
+    color: #f26464;
+}
+p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-right: 45px;
+    margin-bottom:50px
+}
+h4{
+    padding-bottom: 5px;
+    border-bottom: 3px  solid #f26464 ;
+    max-width: 90px;
+    margin-top: 10px;
+}
+.introdc{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 90px;
+}
+.button{
+    display: flex;
+}
+.but1{
+    margin-left: 350px;
+    margin-top: 50px ;
+    width: 200px;
+    height: 40px;
+    border: 1.5px solid #f26464 ;
+    background: transparent;
+    color: #f26464;
+    border-radius: 25px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+ }
+.but1:hover{
+    background: #f26464;
+    color: aliceblue;
+}
+.skill {
+    display: flex;
+    justify-content: space-around;
+  }
+  h2 {
+    padding-bottom: 8px;
+    border-bottom: 3px  solid #f26464 ;
+    max-width: 100px;
+    margin-top: 10px;
+    font-size: 13px;
+    text-align: center;
+  }
+  .skill div{
+    display: inline-block;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 0px 20px 10px 0;
+  }
+.ul_skill div{
+    border: 2px solid#f1f1f1 ;
+    border-radius: 30px;
+    text-align: center;
+}
+.core_skill{
+    padding-right: 20px;
+    margin: right 10px;: ;
+}
+.exp h2{
+    padding-bottom: 8px;
+    border-bottom: 3px  solid #f26464 ;
+    max-width: 140px;
+    font-size: 13px;
+    text-align: center;
+}
+.matrix{
+    font-size: 20px;
+}
+.lx{
+    font-size: 20px;
+}
+.all_exp {
+    display: flex;
+    justify-content: space-between;
+  }
+  .timeline_1,
+  .timeline_2 {
+    box-sizing: border-box;
+    padding: 20px;
+  }
+.timeline_2{
+    margin-top: 40px;
+}
+.ls_card h2{
+    max-width: 140px;
+}
+h3.title{
+    color: black;
+    size: 20px;
+}
+.card__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+  
+  .card__item-text {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+  .card-img {
+    width: 30%;
+    height: auto;
+  }
+  .card__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd; 
+    background-color: #f9f9f9; 
+  }
+  
+  .card__item-text {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+  
+  .card-img {
+    width: 50%;
+    height: auto;
+    border-left: 1px solid #ddd;
+  }
+.but2
+  {
+    width: 200px;
+    height: 40px;
+    border: 1.5px solid #f26464 ;
+    background: transparent;
+    color: #f26464;
+    border-radius: 25px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+.but2:hover{
+    background: #f26464;
+    color: aliceblue;
+}
+.stay{
+    padding-top: 70px;
+    color: grey;
+    text-align: center;
+    margin-top 20px;
+}
+.ready{
+    color: white;
+    text-align: center;
+    font-size: 45px;
+    
+}
+.feel{
+    color: white;
+    text-align: center;
+}
+.but3{
+    margin-left: 350px;
+    width: 200px;
+    height: 40px;
+    border: 1.5px solid #f26464 ;
+    background: transparent;
+    color: #f26464;
+    border-radius: 25px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.end {
+    color: white;
+    text-align: center;
+    padding-bot 30px;
+}
+.footer{
+    background-color: black;
+}
+  
+
