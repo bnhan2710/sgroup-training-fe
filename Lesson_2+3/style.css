@@ -243,6 +243,7 @@ h3.title{
     color: aliceblue;
 }
 .but3{
+    margin-right: 35px;
     justify-items: center;
     width: 250px;
     height: 40px;
@@ -251,7 +252,6 @@ h3.title{
     color: #f26464;
     border-radius: 25px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    margin-right: 40px;
 }
 .end {
     display: flex;
@@ -261,6 +261,8 @@ h3.title{
 }
 .footer{
     background-color: black;
+    width: 100%;
+
 }
 .card-img{
     width: 300px;
@@ -274,4 +276,31 @@ h3.title{
     margin-top: 50px;
     display: flex;
     justify-content: center;
+    margin-bottom: 30px ;
+}
+
+.all{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px; }
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.social_icon {
+    margin-top: 10px;
+}
+.introduct {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.introduct_text {
+    max-width: 500px;
+    text-align: left; 
 }
