@@ -235,25 +235,27 @@ h3.title{
     display: flex;
     color: grey;
     justify-content: center;
+
 }
 .ready{
     color: white;
     display: flex;
     justify-content: center;
     font-size: 45px;
+    font-weight: bolder;
     
 }
 .feel{
     display: flex;
     justify-content: center;
     color: white;
-}
+} 
 .but3:hover{
     background: #f26464;
     color: aliceblue;
 }
-.but3{
-    margin-right: 35px;
+.but3{ 
+    margin-right: 50px;
     justify-items: center;
     width: 250px;
     height: 40px;
@@ -269,10 +271,10 @@ h3.title{
     justify-content: center;
     padding-bottom: 30px;
 }
-.footer{
+.container_footer{
     background-color: black;
     width: 100%;
-
+    display: block; 
 }
 .card-img{
     width: 300px;
