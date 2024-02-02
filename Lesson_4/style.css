@@ -1,3 +1,7 @@
+.container{
+    padding: 230px;
+    margin: 0;
+}
 .box{
     position: relative;
     width: 600px;
@@ -63,6 +67,9 @@ body{
     opacity: 1;
     transform: translateY(-25px);
 }
+.box1:hover{
+    cursor: pointer;
+}
 
 
 .box2_body{
@@ -101,6 +108,9 @@ body{
 .box2_title{
     transition: 0.2s linear;
 }
+.box2:hover{
+    cursor: pointer;
+}
 .box2:hover .box2_title{
     color: #fff;
     transform: translateY(-50px);
@@ -117,3 +127,57 @@ body{
     opacity: 1;
     transform: translateY(-40px);
 }
+.box3 img{
+    scale: 1.05;
+    overflow: hidden;
+    transition: 0.2s linear;
+}
+.box3:hover img{
+    transform: translateY(20px);
+}
+.box3_body{
+    position: absolute;
+    text-align: center;
+    margin-top: 150px ;
+    margin-left: 150px;
+    top: 40px;
+    right: 10px;
+    color: aliceblue;
+}
+.LAYLA{
+    font-weight: 800;
+}
+.box3_text{
+    position: absolute;
+    text-transform: lowercase;
+    opacity: 0;
+    transition: 0.2s linear;
+    margin-left: 170px;
+}
+.box3:hover .box3_text{
+    opacity: 1;
+    transform: translateY(-5px);
+}
+.box3_title{
+    transition: 0.2s linear;
+}
+.box3:hover .box3_title{
+    transform: translateY(10px);
+}   
+.box3:before {
+    top: 0;
+    z-index: 1;
+    right: 0;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 105%;
+    bottom: 5px;
+    display: block;
+    background-color: hsla(195, 99%, 70%, 0.3);
+    transition: 0.2s linear;
+}
+.box3:hover::before{
+    transform: translateY(20px);
+}
+        
