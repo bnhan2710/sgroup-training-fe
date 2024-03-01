@@ -69,7 +69,7 @@ function FindNextDay(day, month, year){
                 else{
                     day = 1
                     month++
-                    console.log(day,month,year) 
+                    console.log(day,month,year)     
                 }
             }  
             else if(day<28)
@@ -82,4 +82,5 @@ function FindNextDay(day, month, year){
             }
         }
     }
-FindNextDay(29,12,2024)
+    
+FindNextDay(29,2,2024)
