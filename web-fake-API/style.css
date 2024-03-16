@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Kings", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+img{
+    border-bottom: 1px solid grey;
+    border-radius: 20px 20px 0 0;
+}
+.article--item{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    height: 550px;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-top: 40px;
+    box-sizing: border-box;
+    background: rgb(247,241,227);
+    background: linear-gradient(111deg, rgba(247,241,227,1) 5%, rgb(248, 222, 119) 85%);
+}
+p{  
+    margin-left: 20px;
+    font-size: 9px;
+}
+h2{
+    margin: 10px;
+}
+h5{
+    margin-left: auto;
+    margin-right: 20px;
+    font-size: 8px;
+}
+.thumbnail{
+    display: none;
+}
+@media only screen and (max-width: 787px) {
+    .article--item{
+        width: 100%;
+    }
+    /* .thumbnail{
+        display: inline-block;
+        height: 200px;
+        width: 400px;
+        margin: auto;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    .thumbnail::after{
+        content: "DAY LA THUMBNAIL";
+        z-index: 2px;
+    }
+    .img{
+        display: none;
+    } */
+}
