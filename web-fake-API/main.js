@@ -8,13 +8,15 @@ data.then(function(res) {
     const childs = res.map(function(item) {
         return `
         <div class="article--item">
-        <img class = "img" src="${item.image}" alt="">
-        <img class = "thumbnail" src="${item.thumbnail}" alt="">
-        <h2>${item.title}</h2>
-        <p>${item.content}</p>
-        <h5> BY: ${item.slug}</h5>
-        <h5> published at: ${item.publishedAt}</h5>
-        <h5> updated at: ${item.updatedAt}</h5>
+            <img class="img" src="${item.image}" alt="">
+            <img class="thumbnail" src="${item.thumbnail}" alt="">
+            <h2>${item.title}</h2>
+            <p class="limited-before">${item.content}</p>
+            <p class="limited-after">${item.content}</p>
+            <button class="read-more-btn" onclick="toggleText(this, this.previousElementSibling)">Read More</button>
+            <h5> BY: ${item.slug}</h5>
+            <h5> published at: ${item.publishedAt}</h5>
+            <h5> updated at: ${item.updatedAt}</h5>
         </div>
         `
     });
@@ -25,3 +27,16 @@ data.then(function(res) {
 }).finally(function() {
     console.log("finally")
 })
+function toggleText(button, content) {
+    let text = document.getElementsByClassName("limited-before");
+    if (content.style.display === "none") {
+        content.style.display = "block";  
+        text.style.display = "none";
+        button.textContent = "Read Less";
+    } else {
+        content.style.display = "none";
+        text.style.display = "none";
+        button.textContent = "Read More";
+    }
+
+}
