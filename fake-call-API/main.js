@@ -11,32 +11,27 @@ data.then(function(res) {
             <img class="img" src="${item.image}" alt="">
             <img class="thumbnail" src="${item.thumbnail}" alt="">
             <h2>${item.title}</h2>
-            <p class="limited-before">${item.content}</p>
             <p class="limited-after">${item.content}</p>
-            <button class="read-more-btn" onclick="toggleText(this, this.previousElementSibling)">Read More</button>
+            <button class="read-more-btn" onclick="toggleText(this, this.previousElementSibling)">read more</button>
             <h5> BY: ${item.slug}</h5>
             <h5> published at: ${item.publishedAt}</h5>
             <h5> updated at: ${item.updatedAt}</h5>
         </div>
         `
     });
-    console.log(container)
+    // console.log(container)
     container.innerHTML = childs.join("")
 }).catch(function(err){
-    console.log("loi", err)
+    console.log("ERROR", err)
 }).finally(function() {
-    console.log("finally")
+    console.log("FINALY")
 })
-function toggleText(button, content) {
-    let text = document.getElementsByClassName("limited-before");
-    if (content.style.display === "none") {
-        content.style.display = "block";  
-        text.style.display = "none";
-        button.textContent = "Read Less";
+function toggleText(el, el2) {
+    if (el.innerText === "read more") {
+        el.innerText = "read less"
+        el2.classList.remove("limited-after")
     } else {
-        content.style.display = "none";
-        text.style.display = "none";
-        button.textContent = "Read More";
+        el.innerText = "read more"
+        el2.classList.add("limited-after")
     }
-
 }

@@ -72,16 +72,14 @@ h5{
     } */
 }
 button{
+
     margin-left: 10px;
     width: fit-content;
-    font-size: 8px;
+    font-size: 24px;
     height: fit-content;
 }
-.limited-before{
+.limited-after{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-.limited-after{
-    display: none;
 }   
