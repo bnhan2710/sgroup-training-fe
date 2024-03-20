@@ -1,0 +1,93 @@
+* {
+    font-family: "Hedvig Letters Sans", sans-serif;
+}
+
+#create-btn {
+    width: 100px;
+    height: 30px;
+    margin-bottom: 20px;
+    background-color: #a6d3fa;
+    border: none;
+    border-radius: 8px;
+    transition: 0.2s linear;
+}
+#create-btn:hover{
+    background-color: #1277fb;
+    cursor: pointer;
+}
+.cards{
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.card {
+    position: relative;
+    width: fit-content;
+    border: 1px solid #9e9e9e;
+    border-radius: 8px;
+    padding: 14px;
+}
+.card-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.action {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+.action > img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.popup-container {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1818188d;
+    display: none;
+}
+img{
+    width: 20px;
+}
+.active{
+    display: flex;
+}
+.popup-main {
+    padding: 10px;
+    border-radius: 8px;
+    width: 200px;
+    height: fit-content;
+    background-color: #fff;
+}
+.popup-main button {
+    margin-top: 10px;
+}
+.remove-card{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 8px;
+    background: transparent;
+    transition: 0.2s linear;
+}
+.remove-card:hover{
+    cursor: pointer;
+    background-color: red;
+}
+.action{
+    display: flex;
+
+}

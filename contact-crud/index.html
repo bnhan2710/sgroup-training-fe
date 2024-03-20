@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/style.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="popup-container">
+            <div class="popup-main">
+                <label for="fiedl-name">Name</label>
+                <input type="text" id="fiedl-name">
+                <label for="fiedl-phone">Phone</label>
+                <input type="text" id="fiedl-phone">
+                <label for="fiedl-mail">Email</label>
+                <input type="text" id="fiedl-mail">
+                <button onclick="OnCreate()" >Create</button>
+            </div>
+        </div>
+        <div class="header">
+            <button id="create-btn">Create</button>   
+        </div>
+            <!-- list card -->
+            <div id="cards" class="cards">
+                <div class="card">
+                    <button onclick="OnRemove()" class="remove-card"></button>
+                    <div class="card-item">
+                        <img src="./assets/icon/contact.svg" alt="">
+                        <span id="name">Bao Nhan</span>
+                    </div>
+                    <div class="card-item">
+                        <img src="./assets/icon/phone.svg" alt="">
+                        <span id="phone">0935398214</span>
+                    </div>
+                    <div class="card-item">
+                        <img src="./assets/icon/mail.svg" alt="">
+                        <span id = "mail">@gmail.com</span>
+                    </div>
+                    <div class="action"></div>
+                    <img id="edit" src="./assets/icon/edit.svg" alt="">
+                    <img id="delete" src="./assets/icon/bin.svg" alt="">
+                </div>
+            </div>
+    </div>
+</body>
+<script src="./assets/js/main.js"></script>
+</html>
