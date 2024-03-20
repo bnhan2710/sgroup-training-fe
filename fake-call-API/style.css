@@ -30,6 +30,7 @@ img{
     height: fit-content;
     border: 1px solid black;
     border-radius: 20px;
+    position: relative;
     gap: 20px;
     margin-top: 40px;
     box-sizing: border-box;
@@ -83,3 +84,17 @@ button{
     overflow: hidden;
     text-overflow: ellipsis;
 }   
+.remove{
+    position: absolute;
+    text-align: center;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 20px;
+    height: 20px;
+    font-size: 8px;
+    border-radius: 30%;
+    transition: all 0.2s linear; 
+}
+.remove:hover{
+    background-color: red;
+}

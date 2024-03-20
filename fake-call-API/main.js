@@ -1,13 +1,15 @@
-const data = fetch('https://jsonplaceholder.org/posts?fbclid=IwAR08h-5pNQaXhFvfgZxcceF2LHjiuL4T1MvR-lpAFai1d2mNeuhp421pWz8')
-data.then(function(res) {
-    console.log(res)
-    return res.json()
-}).then(function(res) {
+const getNewData = async () => {
+const data = await fetch(`https://jsonplaceholder.org/posts?fbclid=IwAR08h-5pNQaXhFvfgZxcceF2LHjiuL4T1MvR-lpAFai1d2mNeuhp421pWz8/`)
+ return data.json()
+}
+
+getNewData().then(function(res) {
     console.log(res)
     let container = document.getElementById("container")
     const childs = res.map(function(item) {
         return `
         <div class="article--item">
+            <button class="remove" onclick="removeElement(this.parentNode)">X</button>
             <img class="img" src="${item.image}" alt="">
             <img class="thumbnail" src="${item.thumbnail}" alt="">
             <h2>${item.title}</h2>
@@ -19,19 +21,26 @@ data.then(function(res) {
         </div>
         `
     });
-    // console.log(container)
     container.innerHTML = childs.join("")
+
 }).catch(function(err){
     console.log("ERROR", err)
 }).finally(function() {
     console.log("FINALY")
 })
-function toggleText(el, el2) {
-    if (el.innerText === "read more") {
-        el.innerText = "read less"
-        el2.classList.remove("limited-after")
+
+function toggleText(but, content) {
+    if (but.innerText === "read more") {
+        but.innerText = "read less"
+        content.classList.remove("limited-after")
     } else {
-        el.innerText = "read more"
-        el2.classList.add("limited-after")
+        but.innerText = "read more"
+        content.classList.add("limited-after")
     }
+}
+
+function removeElement(article) {
+        article.parentNode.removeChild(article);
+        // el.remove()
+        console.log("article after remove:", document.getElementById("container").childElementCount)
 }
