@@ -11,9 +11,35 @@ let contacts = [
     },
     {
         name: "Chi Bao",
-        phone: "01982309809",
+        phone: "019829809",
         mail: "chibao@gmail.com",
     },
+    {
+        name: "Duc Kien",
+        phone: "091124114",
+        mail: "duckien@gmail.com",
+    },
+    {
+        name:"Thanh Tien",
+        phone: "023983214",
+        mail: "thanhtien@gmail.com",
+    },
+    {
+        name: "Tien Dat",
+        phone: "012441214",
+        mail: "nhanbao@gmail.com",
+    },
+    {
+        name: "Van Toan",
+        phone: "093124114",
+        mail: "vanToan@gmail.com",
+    },
+    {
+        name: "Quang",
+        phone: "023423414",
+        mail: "quang@gmail.com",
+    }
+    
 
 ]
 if (localStorage.getItem("contacts")) {
@@ -24,6 +50,7 @@ let cardsContainer = document.getElementById("cards")
 let createBtn = document.getElementById("create-btn")
 let popupContainer = document.querySelector(".popup-container")
 let popupMain = document.querySelector(".popup-main")
+let checkbox = document.querySelector(".check-delete")
 console.log(createBtn)
 //Open Popup
 createBtn.addEventListener("click", function() {
@@ -38,12 +65,18 @@ popupContainer.addEventListener("click", function() {
     document.getElementById("fiedl-phone").value = ""
     document.getElementById("fiedl-mail").value = ""
 })
-//prevent close
-// popupMain.addEventListener("click", function(event) {
-//     event.stopPropagation()
-// })
+// prevent close
+popupMain.addEventListener("click", function(event) {
+    event.stopPropagation()
+})
 
 function OnCreate() {
+    if(
+        document.getElementById("fiedl-name").value == "" ||  document.getElementById("fiedl-phone").value == "" ||   document.getElementById("fiedl-mail").value == ""){
+        alert("Vui long nhap day du thong tin")
+        return
+    }
+    else{
     let name = document.getElementById("fiedl-name").value
     let phone = document.getElementById("fiedl-phone").value
     let mail = document.getElementById("fiedl-mail").value
@@ -55,16 +88,25 @@ function OnCreate() {
     })
     localStorage.setItem("contacts", JSON.stringify(contacts))
     render()
+    popupContainer.classList.toggle("active")
+}
 }
 // function OnRemove(element){
 //     element.remove();
 //     localStorage.removeItem("contacts", JSON.stringify(contacts))
 // }
 function deleteCard(index){
-    console.log(index)
-    contacts.splice(index, 1)
-    localStorage.setItem("contacts", JSON.stringify(contacts))
-    render()
+    checkbox.classList.toggle("active")
+    document.getElementById("cancel").addEventListener("click", function(){
+        checkbox.classList.toggle("active")
+    })
+    document.getElementById("confirm").addEventListener("click", function(){
+        checkbox.classList.toggle("active")
+        console.log(index)
+        contacts.splice(index, 1)
+        localStorage.setItem("contacts", JSON.stringify(contacts))
+        render()
+    })
 }
 
 function render() {
@@ -92,5 +134,4 @@ function render() {
     })
     cardsContainer.innerHTML = element.join()
 }
-
 render()
