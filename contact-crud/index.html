@@ -24,13 +24,25 @@
         </div>
         <div class="check-delete">
             <p>Are you sure you want to delete this contact?</p>
-            <button id="cancel">No, cancel</button>
+            <button class="cancel">No, cancel</button>
             <button id="confirm">Yes, delete it</button>
+        </div>
+        <div class="edit-container">
+            <div class="edit-main">
+                <label for="edit-name">Name</label>
+                <input type="text" id="edit-name">
+                <label for="edit-phone">Phone</label>
+                <input type="text" id="edit-phone">
+                <label for="edit-mail">Email</label>
+                <input type="text" id="edit-mail">
+                <button id ="save">Save change</button>
+                <button id="cancel-edit" >Cancel</button>
+            </div>
         </div>
         <div class="header">
             <div class="block--left">
                 <img class="home--icon" src="./assets/icon/home.svg" alt="">
-                <input id="search" placeholder="Search contact..." type="text">
+                <input id="search" placeholder="Search contact name..." type="text">
             <button id="create-btn">+</button>  
             <span class="header__btn--add">Add</span>
         </div>

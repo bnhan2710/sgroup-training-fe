@@ -51,7 +51,10 @@ let createBtn = document.getElementById("create-btn")
 let popupContainer = document.querySelector(".popup-container")
 let popupMain = document.querySelector(".popup-main")
 let checkbox = document.querySelector(".check-delete")
+let editBox = document.querySelector(".edit-container")
+console.log(checkbox)
 console.log(createBtn)
+console.log(editBox)
 //Open Popup
 createBtn.addEventListener("click", function() {
     let popupContainer = document.querySelector(".popup-container")
@@ -95,20 +98,54 @@ function OnCreate() {
 //     element.remove();
 //     localStorage.removeItem("contacts", JSON.stringify(contacts))
 // }
-function deleteCard(index){
-    checkbox.classList.toggle("active")
-    document.getElementById("cancel").addEventListener("click", function(){
-        checkbox.classList.toggle("active")
-    })
-    document.getElementById("confirm").addEventListener("click", function(){
-        checkbox.classList.toggle("active")
-        console.log(index)
+// Lặp qua tất cả các thẻ card và thêm sự kiện cho nút xóa
+let deleteButtons = document.querySelectorAll("#cards .card #delete");
+deleteButtons.forEach((button, index) => {
+    button.addEventListener("click", function() {
+        deleteCard(index);
+    });
+});
+
+
+function deleteCard(index) {
+    let cardToDelete = document.querySelectorAll("#cards .card")[index];
+    let confirmDelete = document.querySelector(".check-delete");
+    let confirmBtn = confirmDelete.querySelector("#confirm");
+    let cancelBtn = confirmDelete.querySelector(".cancel");
+
+    confirmDelete.classList.add("active--delete");
+
+    confirmBtn.addEventListener("click", function() {
         contacts.splice(index, 1)
         localStorage.setItem("contacts", JSON.stringify(contacts))
         render()
+        confirmDelete.classList.remove("active--delete");
+    });
+
+    cancelBtn.addEventListener("click", function() {
+        confirmDelete.classList.remove("active--delete");
+    });
+}
+function editCard(index){
+    let editBox = document.querySelector(".edit-container")
+    let Save = document.querySelector("#save")
+    let Cancel = document.querySelector("#cancel-edit")
+    editBox.classList.toggle("active")
+    document.getElementById("edit-name").value = contacts[index].name
+    document.getElementById("edit-phone").value = contacts[index].phone
+    document.getElementById("edit-mail").value = contacts[index].mail
+    Save.addEventListener("click", function(){
+        contacts[index].name = document.getElementById("edit-name").value
+        contacts[index].phone = document.getElementById("edit-phone").value
+        contacts[index].mail = document.getElementById("edit-mail").value
+        localStorage.setItem("contacts", JSON.stringify(contacts))
+        render()
+        editBox.classList.remove("active")
+    })
+    Cancel.addEventListener("click", function(){
+        editBox.classList.remove("active")
     })
 }
-
 function render() {
     let element = contacts.map((item,index) =>{
         return `
@@ -126,7 +163,7 @@ function render() {
             <span id = "mail">${item.mail}</span>
         </div>
         <div class="action"></div>
-        <img id="edit" src="./assets/icon/edit.svg" alt="">
+        <img id="edit" onclick = "editCard(${index})" src="./assets/icon/edit.svg" alt="">
         <img id="delete" onclick = "deleteCard(${index})" src="./assets/icon/bin.svg" alt="">
     </div>
 </div>
