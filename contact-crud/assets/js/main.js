@@ -42,6 +42,8 @@ let contacts = [
     
 
 ]
+
+
 if (localStorage.getItem("contacts")) {
     contacts = JSON.parse(localStorage.getItem("contacts"))
 }

@@ -73,8 +73,8 @@ svg{
     width: 15px;
     height: 20px;
     background-color: initial;
-    border: 1px solid rgb(81, 81, 226);;
-    filter: drop-shadow(0px 2px 4px rgb(38, 72, 247));
+    border: 1px solid rgb(81, 81, 226);
+     filter: drop-shadow(0px 2px 4px rgb(38, 72, 247));
 }
 span{
     font-size: 12px;
