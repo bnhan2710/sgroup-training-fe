@@ -36,7 +36,7 @@ function togglePassword() {
       error_pass.style.display = 'none';
     }
     if(isValid && passwordRegex.test(ValidPass.value)){
-      alert("Login Successful, Hello " + input.value);
+      window.location.href = "https://bnhan2710.github.io/S-GroupLearn/contact-crud/";
     }
   }
  

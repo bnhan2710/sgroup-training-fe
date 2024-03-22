@@ -52,15 +52,56 @@ let popupContainer = document.querySelector(".popup-container")
 let popupMain = document.querySelector(".popup-main")
 let checkbox = document.querySelector(".check-delete")
 let editBox = document.querySelector(".edit-container")
+let search = document.getElementById("search")
+
+
 console.log(checkbox)
 console.log(createBtn)
 console.log(editBox)
 //Open Popup
+setInterval(autoFind, 1000)
+function autoFind() {
+    search.value = document.getElementById("search").value
+    console.log(search.value)
+    if(search.value == "") {
+        return render()
+    }
+    
+    else {
+    contacts.forEach(item  => {
+        if ((item.name).toLocaleUpperCase().includes((search.value).toLocaleUpperCase())){
+          cardsContainer.innerHTML = ""
+            let hadfound = document.createElement("div")
+            hadfound.classList.add("card")
+            hadfound.innerHTML = `
+            <div class="card-item">
+                <img src="./assets/icon/contact.svg" alt="">
+                <span id="name">${item.name}</span>
+            </div>
+            <div class="card-item">
+                <img src="./assets/icon/phone.svg" alt="">
+                <span id="phone">${item.phone}</span>
+            </div>
+            <div class="card-item">
+                <img src="./assets/icon/mail.svg" alt="">
+                <span id = "mail">${item.mail}</span>
+            </div>
+            <div class="action"></div>
+            <img id="edit" src="./assets/icon/edit.svg" alt="">
+            <img id="delete" src="./assets/icon/bin.svg" alt="">
+            `
+            cardsContainer.appendChild(hadfound)
+            console.log(hadfound)
+        }
+    })
+}
+}
 createBtn.addEventListener("click", function() {
     let popupContainer = document.querySelector(".popup-container")
     popupContainer.classList.toggle("active")
     console.log(popupContainer)
 })
+
 //close Popup
 popupContainer.addEventListener("click", function() {
     popupContainer.classList.toggle("active")
@@ -68,6 +109,7 @@ popupContainer.addEventListener("click", function() {
     document.getElementById("fiedl-phone").value = ""
     document.getElementById("fiedl-mail").value = ""
 })
+
 // prevent close
 popupMain.addEventListener("click", function(event) {
     event.stopPropagation()
@@ -98,7 +140,6 @@ function OnCreate() {
 //     element.remove();
 //     localStorage.removeItem("contacts", JSON.stringify(contacts))
 // }
-// Lặp qua tất cả các thẻ card và thêm sự kiện cho nút xóa
 let deleteButtons = document.querySelectorAll("#cards .card #delete");
 deleteButtons.forEach((button, index) => {
     button.addEventListener("click", function() {
@@ -126,6 +167,7 @@ function deleteCard(index) {
         confirmDelete.classList.remove("active--delete");
     });
 }
+
 function editCard(index){
     let editBox = document.querySelector(".edit-container")
     let Save = document.querySelector("#save")
@@ -146,6 +188,7 @@ function editCard(index){
         editBox.classList.remove("active")
     })
 }
+
 function render() {
     let element = contacts.map((item,index) =>{
         return `
@@ -169,6 +212,6 @@ function render() {
 </div>
 </div>`
     })
-    cardsContainer.innerHTML = element.join()
+    cardsContainer.innerHTML = element.join("")
 }
 render()
