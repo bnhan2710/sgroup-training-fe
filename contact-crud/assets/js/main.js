@@ -133,6 +133,9 @@ function OnCreate() {
     })
     localStorage.setItem("contacts", JSON.stringify(contacts))
     render()
+    document.getElementById("fiedl-name").value = ""
+    document.getElementById("fiedl-phone").value = ""
+    document.getElementById("fiedl-mail").value = ""
     popupContainer.classList.toggle("active")
 }
 }
